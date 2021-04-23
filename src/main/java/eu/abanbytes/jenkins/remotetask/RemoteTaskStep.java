@@ -1,5 +1,6 @@
 package eu.abanbytes.jenkins.remotetask;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.Extension;
 import hudson.Launcher;
 import hudson.model.TaskListener;
@@ -82,6 +83,7 @@ public class RemoteTaskStep extends Step implements Serializable {
     public static class Execution extends SynchronousNonBlockingStepExecution {
         protected static final long serialVersionUID = 1L;
 
+        @SuppressFBWarnings // the RemoteTaskStep.Execution object remains on the Jenkins master, is never serialized
         protected final transient RemoteTaskStep step;
 
         public Execution(RemoteTaskStep step, StepContext context) {
