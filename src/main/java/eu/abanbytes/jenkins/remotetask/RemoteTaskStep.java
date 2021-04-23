@@ -104,6 +104,7 @@ public class RemoteTaskStep extends Step {
                     if(!step.returnStdout) { listener.getLogger().println(line); }
                 }
             }
+            p.waitFor();
             int rc = p.exitValue();
 
             if(rc != 0 && !step.returnStatus) { throw new RuntimeException("command failed with return code " + rc); }
