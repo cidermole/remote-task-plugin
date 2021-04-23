@@ -1,5 +1,7 @@
 package eu.abanbytes.jenkins.remotetask;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
+import hudson.EnvVars;
 import hudson.Extension;
 import hudson.FilePath;
 import hudson.Launcher;
@@ -86,7 +88,7 @@ public class RemoteTaskBuilder extends Builder implements SimpleBuildStep {
         }
     }
 
-    @Symbol("remoteTask")
+    @Symbol("remoteTask2")
     @Extension
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
         public FormValidation doCheckCommand(@QueryParameter List<String> command) throws IOException, ServletException {
