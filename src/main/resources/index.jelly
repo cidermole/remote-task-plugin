@@ -1,4 +1,4 @@
 <?jelly escape-by-default='true'?>
 <div>
-    TODO
+    Helps to run commands on remote agents, similar to bat() but using ProcessBuilder to be compatible with programs like vmrun.exe
 </div>
