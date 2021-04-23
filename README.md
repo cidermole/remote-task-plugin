@@ -16,6 +16,13 @@ node('label') {
 }
 ```
 
+Supported additional options (compatible to `bat()`):
+
+```
+def text = remoteTask(command: ['cmd', '/c', 'set'], returnStdout: true)
+def rc = remoteTask(command: ['cmd', '/c', 'set'], returnStatus: true)
+```
+
 ## LICENSE
 
 Licensed under MIT, see [LICENSE](LICENSE.md)
