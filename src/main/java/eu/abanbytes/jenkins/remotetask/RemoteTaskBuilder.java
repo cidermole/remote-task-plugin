@@ -91,7 +91,7 @@ public class RemoteTaskBuilder extends Builder implements SimpleBuildStep {
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
         public FormValidation doCheckCommand(@QueryParameter List<String> command) throws IOException, ServletException {
             if (command == null || command.size() == 0) {
-                return FormValidation.error(Messages.RemoteTaskBuilder_DescriptorImpl_errors_missingCommand());
+                return FormValidation.error("Please pass a command to remoteTask()");
             }
             return FormValidation.ok();
         }
@@ -103,7 +103,7 @@ public class RemoteTaskBuilder extends Builder implements SimpleBuildStep {
 
         @Override
         public String getDisplayName() {
-            return Messages.RemoteTaskBuilder_DescriptorImpl_DisplayName();
+            return "Run command (RemoteTask)";
         }
     }
 }
